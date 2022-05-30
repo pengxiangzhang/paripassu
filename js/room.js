@@ -198,8 +198,10 @@ class Room {
 	//=================================
 
 	
-	connectToFirebase(realtimeDatabaseRef) {
-
+	connectToFirebase({databaseRef}) {
+		databaseRef.set({
+				a: 'a',
+		  })
 	}
 
 	connectToPeer(id) {
