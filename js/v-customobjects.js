@@ -154,26 +154,27 @@ Vue.component("obj-world", {
 	template: `
 	<a-entity>
 		<!--------- SKYBOX --------->
-		<a-sky color="lightblue"></a-sky>
+		<a-sky src="#miamiFL"></a-sky>
 
 		<a-plane 
 			roughness="1"
 			shadow 
-			color="hsl(140,40%,40%)"
+			src="#ground"
 			height="100" 
 			width="100" 
 			rotation="-90 0 0">
 		</a-plane>
 
 		<!---- lights ----> 
-		<a-entity light="type: ambient; intensity: 0.4;" color="white"></a-entity>
-		<a-light type="directional" 
-			position="0 0 0" 
-			rotation="-90 0 0" 
-			intensity="0.4"
-			castShadow target="#directionaltarget">
-			<a-entity id="directionaltarget" position="-10 0 -20"></a-entity>
-		</a-light>
+		<a-entity light="type: ambient; color: #BBB"></a-entity>
+		<a-entity
+		  light="type: directional; color: #FFF; intensity: 0.7"
+		  position="-10 10 5"
+		></a-entity>
+		<a-entity
+		  light="type: directional; color: #BBB; intensity: 0.4"
+		  position="10 10 5"
+		></a-entity>
 
 		<a-cone 
 			v-for="(tree,index) in trees"

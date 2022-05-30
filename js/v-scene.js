@@ -22,7 +22,8 @@ Vue.component("room-scene", {
 		
 		<!--------- ASSETS ---------->
 		<a-assets>
-			<img id="sky" src="img/textures/sky-night.png">
+			<img id="miamiFL" src="img/textures/background.jpeg">
+			<img id="ground" src="img/textures/grasslight-big.jpg">
 		</a-assets>
 
 		<!--------- CAMERA --------->
