@@ -23,8 +23,6 @@ AFRAME.registerComponent('change-color-on-hover', {
 		});
 	}
 });
-
-
 AFRAME.registerComponent('cheeseplate-behavior', {
 	schema: {
 	  color: {default: 'red'}
@@ -43,6 +41,10 @@ AFRAME.registerComponent('cheeseplate-behavior', {
 		el.addEventListener('mouseleave', function () {
 			el.setAttribute('color', previousColor);
 		});
+
+		    el.addEventListener('click', function () {
+		 cheeseplateCubes.pop()
+		});
 	}
 });
 
@@ -59,3 +61,4 @@ Vue.component("cheeseplate", {
 	props: ["room"]
 
 })
+

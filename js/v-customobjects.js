@@ -1,4 +1,4 @@
-const fakeBodyCount = 10
+const fakeBodyCount = 1
 const fakeBodySteps = 500
 
 // Decorate the head of our guests
@@ -279,7 +279,7 @@ Vue.component("obj-world", {
 		})
 
 		fire.position.set(1, 0, -2)
-		fire.fireStrength = 1
+		fire.fireStrength = 4
 
 		// let fire2 = new LiveObject(this.room, {
 		// 	paritype: "fire",  // Tells it which type to use
