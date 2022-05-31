@@ -24,10 +24,11 @@ Vue.component("room-scene", {
 		<a-assets>
 			<img id="miamiFL" src="img/textures/background.jpeg">
 			<img id="ground" src="img/textures/grasslight-big.jpg">
+			<a-asset-item id="mario" src="img/charactor/mario/mario-sculpture.gltf"></a-asset-item>
+			<a-asset-item id="sonic" src="img/charactor/sonic/sonic-the-hedgehog.gltf"></a-asset-item>
+			<a-asset-item id="steve" src="img/charactor/steve/steve.gltf"></a-asset-item>
 		</a-assets>
-
 		<!--------- CAMERA --------->
-
 		<a-camera id="camera" rotation-reader>
 			<a-cursor></a-cursor>
 
@@ -66,7 +67,7 @@ Vue.component("room-scene", {
 			<!--------- ALL THE OBJECTS YOU'VE MADE --------->
 			<live-object  v-for="obj in room.objects" :key="obj.uid" :obj="obj" v-if="obj.room.userHead !== obj" />
 		</a-entity>
-
+		
 
 	</a-scene>`,
 

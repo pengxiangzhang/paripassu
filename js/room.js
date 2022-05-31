@@ -168,6 +168,7 @@ class Room {
 								this.f.addScaledVector(this.position, -.02)
 							}
 							this.position.z = this.height
+							
 						}
 					})
 					head.position.setToCylindrical(3, 4 + Math.random(), 1)
