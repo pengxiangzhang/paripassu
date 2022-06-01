@@ -27,6 +27,9 @@ Vue.component("room-scene", {
 			<a-asset-item id="mario" src="img/charactor/mario/mario-sculpture.gltf"></a-asset-item>
 			<a-asset-item id="sonic" src="img/charactor/sonic/sonic-the-hedgehog.gltf"></a-asset-item>
 			<a-asset-item id="steve" src="img/charactor/steve/steve.gltf"></a-asset-item>
+			<a-asset-item id="dennis" src="img/charactor/dennis/dennis.gltf"></a-asset-item>
+			<a-asset-item id="mei" src="img/charactor/mei/mei.gltf"></a-asset-item>
+			<a-asset-item id="tenryuu" src="img/charactor/tenryuu/tenryuu.gltf"></a-asset-item>
 		</a-assets>
 		<!--------- CAMERA --------->
 		<a-camera id="camera" rotation-reader>

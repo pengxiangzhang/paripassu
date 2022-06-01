@@ -27,10 +27,10 @@ Vue.component("live-object", {
 
 const trackedProperties = ["displayName", "color", "size", "uid", "authID", "label", "labelColor", "labelSize"]
 
-let playerObjList = [["mario",0.01], ["sonic",0.05], ["minion", 0.1]];
+let playerObjList = [["mario",0.01], ["sonic",0.05], ["steve", 0.1], ["dennis",0.7],["mei",0.7],["tenryuu",0.7]];
 function getRandomCharacter() {
 	if(playerObjList = []){
-		playerObjList = [["mario",0.01], ["sonic",0.05], ["steve", 0.15]];
+		playerObjList = [["mario",0.01], ["sonic",0.05], ["steve", 0.1], ["dennis",0.7],["mei",0.7],["tenryuu",0.7]];
 	}
   selected = playerObjList[getRandomInt(playerObjList.length)];
   playerObjList.pop(selected);
