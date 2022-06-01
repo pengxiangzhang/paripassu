@@ -4,26 +4,7 @@ const fakeBodySteps = 500;
 // Decorate the head of our guests
 Vue.component("obj-head", {
   template: `<a-entity>
-		<a-sphere 
-			shadow
-			:radius="headSize"
-			:color="obj.color.toHex()" 
-				
-			>
-			<obj-axes scale=".1 .1 .1" v-if="true" />
-		</a-sphere>
-
-		<a-box v-for="(spike,index) in spikes"
-			:depth="headSize*2"
-			:height="headSize*.2"
-			:width="headSize*2"
-			:position="spike.position.toAFrame(0, .2, 0)"
-			:rotation="spike.rotation.toAFrame()"
-			:color="obj.color.toHex(Math.sin(index))" 
-				
-			>
-		
-		</a-box>
+	<a-gltf-model :src="this.obj.playerObjType" :scale="this.obj.playerObjSize" position="1 0 1" rotation="0 180 0"></a-gltf-model>
 	</a-entity>
 	`,
   computed: {
@@ -147,7 +128,6 @@ Vue.component("obj-world", {
 	<a-entity>
 		<!--------- SKYBOX --------->
 		<a-sky src="#miamiFL"></a-sky>
-
 		<a-plane 
 			roughness="1"
 			shadow 
@@ -201,7 +181,7 @@ Vue.component("obj-world", {
 			:rotation="rock.rotation.toAFrame()"
 			:position="rock.position.toAFrame()">
 		</a-box>
-
+		
 	</a-entity>
 		`,
 
