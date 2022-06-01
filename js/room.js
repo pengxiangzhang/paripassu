@@ -151,17 +151,17 @@ class Room {
 					// Create a fake head object
 					let head = new LiveObject(undefined, {
 						paritype: "head",
-						authID: "FAKE_" + uuidv4(),
+						authID: "User_" + uuidv4(),
 						displayName: words.getUserName(),
 						height: 1.6 + Math.random()*.2,
-						label: "fake",
+						label: "User_",
 						color: new Vector(Math.random()*360, 100, 50),
 						setForce({t, dt, frameCount}) {
 							let idNumber = this.uid.hashCode()
 							this.f.set(0,0,0)
 
-							let move = Math.max(0,2*noise(t*.12 + idNumber - 1))
-							this.f.addPolar(move,20*noise(t*.2 + idNumber))
+							// let move = Math.max(0,2*noise(t*.12 + idNumber - 1))
+							// this.f.addPolar(move,20*noise(t*.2 + idNumber))
 
 
 							if (this.position.length() > 4) {
@@ -199,6 +199,7 @@ class Room {
 
 	
 	connectToFirebase(realtimeDatabaseRef) {
+		
 
 	}
 

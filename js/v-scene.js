@@ -64,6 +64,7 @@ Vue.component("room-scene", {
 			
 			<!--------- ALL THE OBJECTS YOU'VE MADE --------->
 			<live-object  v-for="obj in room.objects" :key="obj.uid" :obj="obj" v-if="obj.room.userHead !== obj" />
+			<cheeseplate :room="room" position="4 0 0"/>
 		</a-entity>
 
 

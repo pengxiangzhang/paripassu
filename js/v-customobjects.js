@@ -98,7 +98,7 @@ Vue.component("obj-fire", {
 			:animation="intensityAnimation"
 
 			position="0 1 0"
-			intensity="2"
+			intensity="1000"
 			:color="obj.color.toHex()"
 			type="point"
 			:distance="obj.fireStrength*4 + 10"
@@ -326,4 +326,14 @@ Vue.component("obj-world", {
 	props: ["room"]
 
 })
+
+// Vue.component("human", {
+	
+// 	template:
+// 	<a-entity>
+// 		<a-box color="tomato" depth="2" height="4" width="0.5"></a-box>
+// 	</a-entity>
+
+	
+// })
 
