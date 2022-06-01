@@ -144,7 +144,12 @@ function colorToHex(v) {
     return hex.length == 1 ? "0" + hex : hex;
   }
 
-  return "#" + componentToHex(rgb[0]) + componentToHex(rgb[1]) + componentToHex(rgb[2]);
+  return (
+    "#" +
+    componentToHex(rgb[0]) +
+    componentToHex(rgb[1]) +
+    componentToHex(rgb[2])
+  );
 }
 
 //=====================================================
@@ -900,7 +905,18 @@ let words = {
     "in",
   ],
 
-  article: ["any", "no", "one", "her", "his", "our", "my", "your", "the", "every"],
+  article: [
+    "any",
+    "no",
+    "one",
+    "her",
+    "his",
+    "our",
+    "my",
+    "your",
+    "the",
+    "every",
+  ],
   placeAdj: [
     "great",
     "tiny",
@@ -1260,7 +1276,8 @@ let words = {
       let prefix2 = "";
       if (this.rng() > 0.5) prefix2 += "The ";
       if (this.rng() > 0.5)
-        prefix2 += this.capitaliseFirstLetter(this.getRandom(this.placeAdj)) + " ";
+        prefix2 +=
+          this.capitaliseFirstLetter(this.getRandom(this.placeAdj)) + " ";
       return (
         prefix2 +
         `${this.capitaliseFirstLetter(material)} ${this.capitaliseFirstLetter(
@@ -1375,7 +1392,10 @@ let words = {
 
   getRandomWord: function (lengthMult) {
     if (this.rng() > 0.5)
-      return this.getRandom(this.syllables.first) + this.getRandom(this.syllables.last);
+      return (
+        this.getRandom(this.syllables.first) +
+        this.getRandom(this.syllables.last)
+      );
 
     if (!lengthMult) lengthMult = 1;
     var s = "";
@@ -1511,8 +1531,8 @@ let randomGrammar = () => {
   return s;
 };
 
-let s = `${getRandom(testGrammar.greeting)}, ${getRandom(testGrammar.color)} ${getRandom(
-  testGrammar.animal
-)}!  
+let s = `${getRandom(testGrammar.greeting)}, ${getRandom(
+  testGrammar.color
+)} ${getRandom(testGrammar.animal)}!  
   	${getRandom(testGrammar.mood)} ${getRandom(words.emoji)}`;
 console.log(s);

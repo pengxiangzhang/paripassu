@@ -1,10 +1,8 @@
-
 /*
  Apps are made out of a header (title/controls) and footer
  and some number of columns
  If its vertical, the columns can become sections in one column
  */
-
 
 /*
 	When events happen in the widgets, post them to Io?
@@ -12,35 +10,29 @@
 	"Something happened here, please send this to everyone"
 */
 
-let room = new Room()
+let room = new Room();
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
-let paused = false
+let paused = false;
 
 // Pause on space
-document.onkeyup = function(e) {
-  if (e.key == " " ||
-      e.code == "Space" ||      
-      e.keyCode == 32      
-  ) {
-    paused = !paused
+document.onkeyup = function (e) {
+  if (e.key == " " || e.code == "Space" || e.keyCode == 32) {
+    paused = !paused;
   }
-}
+};
 
 window.onload = (event) => {
+  console.log("START APP");
 
-	console.log("START APP")
+  Vue.config.ignoredElements = [/^a-/];
+  Vue.component("vector", {
+    template: `<div class="vector">{{label}}:{{v}}</div>`,
+    props: ["v", "label"],
+  });
 
-
-
-	Vue.config.ignoredElements = [/^a-/];
-	Vue.component("vector", {
-		template: `<div class="vector">{{label}}:{{v}}</div>`,
-		props: ["v", "label"]
-	})
-
-	new Vue({
-		template: `<div>
+  new Vue({
+    template: `<div>
 		
 			<div id="scene">
 				<room-scene :room="room" v-if="!params.noaframe" />
@@ -68,17 +60,15 @@ window.onload = (event) => {
 			 	</div>
 
 			</div>
-		</div>`, 
+		</div>`,
 
-		data() {
-			return {
-				params: params,
-				room: room // Give Vue access to the room and its data
-			}
-		},
+    data() {
+      return {
+        params: params,
+        room: room, // Give Vue access to the room and its data
+      };
+    },
 
-		el:"#app"
-	})
-
+    el: "#app",
+  });
 };
-

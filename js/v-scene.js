@@ -1,23 +1,20 @@
-
-AFRAME.registerComponent('rotation-reader', {
+AFRAME.registerComponent("rotation-reader", {
   /**
    * We use IIFE (immediately-invoked function expression) to only allocate one
    * vector or euler and not re-create on every tick to save memory.
    */
-	tick: (function () {
-		
-		return function () {
-			if (room.userHead) {
-				room.userHead.position.copy(this.el.object3D.position)
-				room.userHead.rotation.copy(this.el.object3D.rotation)
-			}
-
-		};
-	})()
+  tick: (function () {
+    return function () {
+      if (room.userHead) {
+        room.userHead.position.copy(this.el.object3D.position);
+        room.userHead.rotation.copy(this.el.object3D.rotation);
+      }
+    };
+  })(),
 });
 
 Vue.component("room-scene", {
-	template: `<a-scene>
+  template: `<a-scene>
 
 		
 		<!--------- ASSETS ---------->
@@ -75,20 +72,18 @@ Vue.component("room-scene", {
 
 	</a-scene>`,
 
-	methods: {
-		camtick() {
-			console.log("cam")
-		}
-	},
-	mounted() {
-		// Create 
-	},
+  methods: {
+    camtick() {
+      console.log("cam");
+    },
+  },
+  mounted() {
+    // Create
+  },
 
-	data() {
-		return  {
-			
-		}
-	},
+  data() {
+    return {};
+  },
 
-	props: ["room"],
-})
+  props: ["room"],
+});

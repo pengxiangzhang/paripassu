@@ -1,6 +1,5 @@
-
 Vue.component("vr-body", {
-	template: `
+  template: `
 	<a-entity>
 		<!--  BASE -->
 		<a-entity v-if="body.pos" :position="body.pos.toAFrame()" :rotation="body.rot.toAFrame()">
@@ -39,13 +38,13 @@ Vue.component("vr-body", {
 			</a-entity>
 		</a-entity>
 	</a-entity>`,
-	mounted() {
-		console.log("body", this.body.head)
-	},
-	computed: {
-		nosePos() {
-			return `0 0 ${this.body.headSize}`
-		}
-	},
-	props: ["body"]
-})
+  mounted() {
+    console.log("body", this.body.head);
+  },
+  computed: {
+    nosePos() {
+      return `0 0 ${this.body.headSize}`;
+    },
+  },
+  props: ["body"],
+});
