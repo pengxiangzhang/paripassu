@@ -63,18 +63,17 @@ AFRAME.registerComponent('cheeseplate-behavior', {
 
 Vue.component("cheeseplate", {
 	template: `
-		<a-box src="/img/textures/wood.png"
+		<a-box src="img/textures/wood.png"
 			cheeseplate-behavior
 			depth="2" height="2" width="2"
 		>
-    
       <!-- make all the cheese cubes -->
       	<a-box color="orange" 
           depth=".1" height=".1" width=".1"
           v-for="cube in cheeseplateCubes" :position="cube.toAFrame()"
         >
-    
 		</a-box>
+    </a-box>
 	`,
 
   data() {

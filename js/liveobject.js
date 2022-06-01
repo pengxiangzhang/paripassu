@@ -27,6 +27,20 @@ Vue.component("live-object", {
 
 const trackedProperties = ["displayName", "color", "size", "uid", "authID", "label", "labelColor", "labelSize"]
 
+let playerObjList = [["mario",0.01], ["sonic",0.05], ["minion", 0.1]];
+function getRandomCharacter() {
+	if(playerObjList = []){
+		playerObjList = [["mario",0.01], ["sonic",0.05], ["steve", 0.15]];
+	}
+  selected = playerObjList[getRandomInt(playerObjList.length)];
+  playerObjList.pop(selected);
+  return selected;
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 class LiveObject extends THREE.Object3D {
 
  	constructor(room, data) {
@@ -50,6 +64,9 @@ class LiveObject extends THREE.Object3D {
  		this.v = new THREE.Vector3()
  		this.v = new THREE.Vector3()
  		this.f = new THREE.Vector3()
+		const playerObjRandom = getRandomCharacter()
+		this.playerObjType = `#${playerObjRandom[0]}`
+		this.playerObjSize = `${playerObjRandom[1]} ${playerObjRandom[1]} ${playerObjRandom[1]}`
 
  		
  		
