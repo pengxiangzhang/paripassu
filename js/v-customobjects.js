@@ -78,7 +78,7 @@ Vue.component("obj-fire", {
 			:animation="intensityAnimation"
 
 			position="0 1 0"
-			intensity="2"
+			intensity="1000"
 			:color="obj.color.toHex()"
 			type="point"
 			:distance="obj.fireStrength*4 + 10"
