@@ -1,4 +1,4 @@
-const fakeBodyCount = 3;
+const fakeBodyCount = 10;
 const fakeBodySteps = 500;
 
 // Decorate the head of our guests
@@ -202,11 +202,7 @@ Vue.component("obj-world", {
       let h = 6 + 4 * noise(i); // Size from 1 to 3
       let tree = new LiveObject(undefined, {
         size: new THREE.Vector3(0.3, h, 0.3),
-        color: new Vector(
-          noise(i * 50) * 30 + 160,
-          100,
-          40 + 10 * noise(i * 10)
-        ),
+        color: new Vector(noise(i * 50) * 30 + 160, 100, 40 + 10 * noise(i * 10)),
       });
       let r = 20 + 10 * noise(i * 40);
       let theta = 2 * noise(i * 10);
@@ -228,11 +224,7 @@ Vue.component("obj-world", {
       let theta = 2 * noise(i * 10) + 3;
       rock.position.setToCylindrical(r, theta, h * 0.3);
       // Look randomly
-      rock.lookAt(
-        Math.random() * 100,
-        Math.random() * 100,
-        Math.random() * 100
-      );
+      rock.lookAt(Math.random() * 100, Math.random() * 100, Math.random() * 100);
       rocks.push(rock);
     }
 
@@ -409,10 +401,23 @@ Vue.component("obj-world", {
         let tick = second / rate;
         let index = second % campfireSongs.length;
         let song = campfireSongs[index];
-        this.room.detailText = song + grammar.flatten("#songStyle#");
+
+        let greeting = randomGrammar();
+
+        this.room.detailText =
+          greeting +
+          song +
+          grammar.flatten("#songStyle#") +
+          "\n" +
+          words.getRandomParagraph();
+
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!", greeting);
       }
     });
+
+    // let randomArr = [];
+    // console.log("random sentence!!!!!!!!!!!!!!!!!!!!!!!!!!", words.getRandomParagraph());
   },
 
-  props: ["room"],
+  props: ["room", "words"],
 });
